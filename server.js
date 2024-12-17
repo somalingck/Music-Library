@@ -36,6 +36,12 @@ app.use('/api/v1/albums', albumRoutes);         // Album routes (CRUD)
 app.use('/api/v1/tracks', trackRoutes);         // Track routes (CRUD)
 app.use('/api/v1/favorites', favoriteRoutes);   // Favorite management routes (add/remove favorites)
 
+
+//
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to the Music Library API!' });
+});
+
 // Default route to handle 404 errors
 app.use((req, res) => {
   res.status(404).json({
